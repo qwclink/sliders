@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  object-fit: cover;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Nunito", sans-serif;
+  overflow: hidden;
+  background: #f1f1f1;
+}
+
+.slider-container {
+  max-width: 1300px;
+  width: 80%;
+}
+.swiper-wrapper {
+  position: relative;
+}
+
+.swiper {
+  width: 100%;
+  padding: 60px 0 80px;
+}
+
+.swiper-slide {
+  position: relative;
+  width: 400px;
+  height: 600px;
+  aspect-ratio: 6/7;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+  background: #fff;
+}
+
+.swiper-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.swiper-slide .container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  z-index: 1;
+}
+
+.swiper-slide .container h1 {
+  color: #000;
+  position: absolute;
+  left: 50%;
+  top: 47%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  font-size: 1.2rem;
+  text-align: left;
+}
+.swiper-slide .container .items {
+  position: absolute;
+  left: 50%;
+  top: 73%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+
+}
+.swiper-slide .container .item {
+  display: flex;
+  justify-content: space-between;
+  color: #000;
+  align-items: center;
+  position: relative;
+  margin-bottom: 10px;
+}
+.swiper-slide .container .item p {
+  font-weight: 700;
+}
+.swiper-slide .container .item p:first-child {
+  opacity: 0.5;
+  font-weight: normal;
+}
+.price {
+  color: red;
+}
+.swiper-slide .container .item button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 16px 10px;
+  color: #fff;
+  background-color: red;
+  border: 0;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+}
+.swiper-slide .container .item button:hover {
+  background-color: rgb(218, 12, 12);
+  box-shadow: 4px 4px 10px #0000007c;
+}
+
+.image-wrapper img {
+  position: absolute;
+  inset: 2%;
+  width: 96%;
+  height: 40%;
+  border: 0;
+  border-radius: 8px;
+  z-index: 2;
+  transition: all .9s cubic-bezier(0.445, 0.05, 0.55, 0.95) .3s;
+  will-change: transform;
+}
+
+.swiper-pagination-bullet {
+  width: 48px;
+  height: 3px;
+  background: #e60505;
+  border-radius: 0;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  font-size: 4em;
+  width: 50px;
+  height: 50px;
+  color: white;
+  background-color: red;
+  padding: 10px;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.5s ease;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  user-select: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.swiper-button-next:hover, 
+.swiper-button-prev:hover {
+  background: #b30303;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-button-prev {
+  left: 16%;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  border-left: 10px solid white;
+  border-right: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.swiper-button-prev::after {
+  border-right: 10px solid white;
+  border-left: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+
+
+@media (max-width: 450px) {
+  .swiper-button-next, .swiper-button-prev {
+    display: none;
+  }
+  .slider-container {
+    width: 90%;
+  }
+
+  .swiper-slide {
+    width: 300px;
+  }
+
+  .swiper-slide .container h1 {
+    font-size: 1.1rem;
+  }
+
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+  }
+}
